@@ -121,8 +121,22 @@ public class ShoppingBasketTest {
 		shoppingBasket.addBookToBasketAndQuantity(testDrivenDevelopmentbyExampleBook);
 		shoppingBasket.addBookToBasketAndQuantity(workingEffectivelyWithLegacyCodeBook);
 
-		Double total = shoppingBasket.getSubtotal();
+		Double actualPrice = shoppingBasket.getSubtotal();
 
-		assertEquals(new Double(187.5), total);
+		assertEquals(new Double(187.5), actualPrice);
+	}
+
+	@Test
+	public void threeBooksContainingTwoDifferentTitlesGets5PercentDiscountAndThirdBookCost50EUR() {
+		Book cleanCodeBook = new Book(50.0, 1);
+		Book cleanCoderBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
+
+		Double actualPrice = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(145), actualPrice);
 	}
 }
