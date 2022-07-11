@@ -1,12 +1,14 @@
 package com.bnpp.kata.developmentbooks;
 
 public class Book {
+	private double price;
+	private int quantity;
 
 	public double getPrice() {
-		return 50.0;
+		return price;
 	}
 
 	public int getQuantity() {
-		return 1;
+		return quantity;
 	}
 }
