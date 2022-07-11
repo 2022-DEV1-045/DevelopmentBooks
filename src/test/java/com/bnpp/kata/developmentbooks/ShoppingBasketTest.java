@@ -70,9 +70,9 @@ public class ShoppingBasketTest {
 		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
 		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
 
-		Double total = shoppingBasket.getSubtotal();
+		Double actualPrice = shoppingBasket.getSubtotal();
 
-		assertEquals(new Double(95.0), total);
+		assertEquals(new Double(95.0), actualPrice);
 	}
 
 	@Test
@@ -85,9 +85,9 @@ public class ShoppingBasketTest {
 		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
 		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
 
-		Double total = shoppingBasket.getSubtotal();
+		Double actualPrice = shoppingBasket.getSubtotal();
 
-		assertEquals(new Double(135.0), total);
+		assertEquals(new Double(135.0), actualPrice);
 	}
 
 	@Test
@@ -102,9 +102,9 @@ public class ShoppingBasketTest {
 		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
 		shoppingBasket.addBookToBasketAndQuantity(testDrivenDevelopmentbyExampleBook);
 
-		Double total = shoppingBasket.getSubtotal();
+		Double actualPrice = shoppingBasket.getSubtotal();
 
-		assertEquals(new Double(160.0), total);
+		assertEquals(new Double(160.0), actualPrice);
 	}
 
 	@Test
