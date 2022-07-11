@@ -56,6 +56,8 @@ public class ShoppingBasket {
 			return totalCost = (50 * basketItems.size() * 0.95) + ((totalQuantity - basketItems.size()) * 50);
 		} else if (totalQuantity == 4 && basketItems.size() == 3) {
 			return totalCost = (50 * basketItems.size() * 0.90) + ((totalQuantity - basketItems.size()) * 50);
+		} else if (totalQuantity == 5 && basketItems.size() == 3) {
+			return (50 * basketItems.size() * 0.90) + (50 * (totalQuantity - basketItems.size()) * 0.95);
 		}
 		return totalCost;
 	}
