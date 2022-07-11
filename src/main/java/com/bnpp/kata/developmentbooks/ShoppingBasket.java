@@ -54,6 +54,8 @@ public class ShoppingBasket {
 			}
 		} else if (totalQuantity == 3 && basketItems.size() == 2) {
 			return totalCost = (50 * basketItems.size() * 0.95) + ((totalQuantity - basketItems.size()) * 50);
+		} else if (totalQuantity == 4 && basketItems.size() == 3) {
+			return totalCost = (50 * basketItems.size() * 0.90) + ((totalQuantity - basketItems.size()) * 50);
 		}
 		return totalCost;
 	}

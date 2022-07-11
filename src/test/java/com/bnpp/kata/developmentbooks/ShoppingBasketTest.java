@@ -139,4 +139,20 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(145), actualPrice);
 	}
+
+	@Test
+	public void fourBooksContainingthreeDifferentTitlesGets10PercentDiscountAndfourthBookCost50EUR() {
+		Book cleanCodeBook = new Book(50.0, 1);
+		Book cleanCoderBook = new Book(50.0, 1);
+		Book cleanArchitectureBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
+
+		Double actualPrice = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(185), actualPrice);
+	}
 }
