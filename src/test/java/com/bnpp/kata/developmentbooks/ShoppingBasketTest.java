@@ -28,4 +28,11 @@ public class ShoppingBasketTest {
 		shoppingItem1.changeQuantity(cleanArchitectureBook.getQuantity() + 1);
 	}
 
+	@Test
+	public void addNewBook() {
+		Book testDrivenDevelopmentbyExampleBook = new Book(150.0, 1);
+		assertNotSame(testDrivenDevelopmentbyExampleBook, cleanCodeBook);
+		assertNotSame(testDrivenDevelopmentbyExampleBook, cleanCoderBook);
+		ShoppingBasketItem shoppingItem3 = new ShoppingBasketItem(testDrivenDevelopmentbyExampleBook, 1);
+	}
 }
