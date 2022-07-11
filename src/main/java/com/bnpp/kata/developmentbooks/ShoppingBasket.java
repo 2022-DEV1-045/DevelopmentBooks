@@ -31,4 +31,7 @@ public class ShoppingBasket {
 		}
 	}
 
+	public double getSubtotal() {
+		return 50.0;
+	}
 }

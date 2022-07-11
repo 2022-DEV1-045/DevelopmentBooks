@@ -1,5 +1,6 @@
 package com.bnpp.kata.developmentbooks;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
 import java.util.ArrayList;
@@ -34,5 +35,18 @@ public class ShoppingBasketTest {
 		assertNotSame(testDrivenDevelopmentbyExampleBook, cleanCodeBook);
 		assertNotSame(testDrivenDevelopmentbyExampleBook, cleanCoderBook);
 		ShoppingBasketItem shoppingItem3 = new ShoppingBasketItem(testDrivenDevelopmentbyExampleBook, 1);
+	}
+
+	@Test
+	public void OneCopyOfAnyOfFiveBooksInShoppingBasketCost50EUR() {
+		ShoppingBasket shoppingBasket = new ShoppingBasket();
+
+		Book cleanCodeBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+
+		Double actualPrice = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(50.0), actualPrice);
 	}
 }
