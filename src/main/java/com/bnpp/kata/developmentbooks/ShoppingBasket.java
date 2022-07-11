@@ -35,9 +35,17 @@ public class ShoppingBasket {
 		double totalCost = 0.0;
 		int totalQuantity = 0;
 
+		for (ShoppingBasketItem bookVolume : basketItems) {
+			totalQuantity += bookVolume.getQuantity();
+		}
+
 		if (basketItems.size() == 1) {
 			totalCost = 50 * basketItems.get(0).getQuantity();
 			return totalCost;
+		} else if (totalQuantity == basketItems.size() && basketItems.size() > 1) {
+			if (basketItems.size() == 2) {
+				return 50 * basketItems.size() * 0.95;
+			}
 		}
 		return totalCost;
 	}
