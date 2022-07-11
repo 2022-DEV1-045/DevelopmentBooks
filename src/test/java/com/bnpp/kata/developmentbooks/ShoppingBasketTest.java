@@ -74,4 +74,19 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(95.0), total);
 	}
+
+	@Test
+	public void threeDifferentBooksGets10PercentDiscount() {
+		Book cleanCodeBook = new Book(50.0, 1);
+		Book cleanCoderBook = new Book(50.0, 1);
+		Book cleanArchitectureBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
+
+		Double total = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(135.0), total);
+	}
 }
