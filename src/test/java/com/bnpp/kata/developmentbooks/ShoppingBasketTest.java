@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ShoppingBasketTest {
+	ShoppingBasket shoppingBasket;
 	List<ShoppingBasketItem> Item = new ArrayList<ShoppingBasketItem>();
 	Book cleanCodeBook = new Book(50.0, 2);
 	Book cleanCoderBook = new Book(100.0, 1);
@@ -17,9 +18,10 @@ public class ShoppingBasketTest {
 	ShoppingBasketItem shoppingItem2 = new ShoppingBasketItem(cleanCoderBook, 2);
 
 	@Before
-	public void intt() {
+	public void initilize() {
 		Item.add(shoppingItem1);
 		Item.add(shoppingItem2);
+		shoppingBasket = new ShoppingBasket();
 	}
 
 	@Test
@@ -39,8 +41,6 @@ public class ShoppingBasketTest {
 
 	@Test
 	public void OneCopyOfAnyOfFiveBooksInShoppingBasketCost50EUR() {
-		ShoppingBasket shoppingBasket = new ShoppingBasket();
-
 		Book cleanCodeBook = new Book(50.0, 1);
 
 		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
@@ -52,8 +52,6 @@ public class ShoppingBasketTest {
 
 	@Test
 	public void twoCopiesOfSameBookGetsNoDiscount() {
-		ShoppingBasket shoppingBasket = new ShoppingBasket();
-
 		Book cleanCodeBook = new Book(50.0, 1);
 
 		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
@@ -63,4 +61,5 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(100.0), actualPrice);
 	}
+
 }
