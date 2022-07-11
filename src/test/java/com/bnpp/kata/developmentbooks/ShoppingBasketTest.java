@@ -106,4 +106,23 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(160.0), total);
 	}
+
+	@Test
+	public void fiveDifferentBooksGets25PercentDiscount() {
+		Book cleanCodeBook = new Book(50.0, 1);
+		Book cleanCoderBook = new Book(50.0, 1);
+		Book cleanArchitectureBook = new Book(50.0, 1);
+		Book testDrivenDevelopmentbyExampleBook = new Book(50.0, 1);
+		Book workingEffectivelyWithLegacyCodeBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
+		shoppingBasket.addBookToBasketAndQuantity(testDrivenDevelopmentbyExampleBook);
+		shoppingBasket.addBookToBasketAndQuantity(workingEffectivelyWithLegacyCodeBook);
+
+		Double total = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(187.5), total);
+	}
 }
