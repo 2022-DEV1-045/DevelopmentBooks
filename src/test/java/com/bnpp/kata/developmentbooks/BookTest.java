@@ -13,4 +13,13 @@ public class BookTest {
 
 		assertEquals(new Double(50.0), actualPrice);
 	}
+
+	@Test
+	public void getQuantity() {
+		Book book = new Book();
+
+		int totalQunatity = book.getQuantity();
+
+		assertEquals(1, totalQunatity);
+	}
 }
