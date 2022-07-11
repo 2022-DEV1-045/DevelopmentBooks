@@ -32,6 +32,13 @@ public class ShoppingBasket {
 	}
 
 	public double getSubtotal() {
-		return 50.0;
+		double totalCost = 0.0;
+		int totalQuantity = 0;
+
+		if (basketItems.size() == 1) {
+			totalCost = 50 * basketItems.get(0).getQuantity();
+			return totalCost;
+		}
+		return totalCost;
 	}
 }
