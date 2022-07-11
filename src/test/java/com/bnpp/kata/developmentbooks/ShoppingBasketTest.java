@@ -49,4 +49,18 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(50.0), actualPrice);
 	}
+
+	@Test
+	public void twoCopiesOfSameBookGetsNoDiscount() {
+		ShoppingBasket shoppingBasket = new ShoppingBasket();
+
+		Book cleanCodeBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+
+		Double actualPrice = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(100.0), actualPrice);
+	}
 }
