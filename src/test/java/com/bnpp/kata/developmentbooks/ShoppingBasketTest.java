@@ -89,4 +89,21 @@ public class ShoppingBasketTest {
 
 		assertEquals(new Double(135.0), total);
 	}
+
+	@Test
+	public void fourDifferentBooksGets20PercentDiscount() {
+		Book cleanCodeBook = new Book(50.0, 1);
+		Book cleanCoderBook = new Book(50.0, 1);
+		Book cleanArchitectureBook = new Book(50.0, 1);
+		Book testDrivenDevelopmentbyExampleBook = new Book(50.0, 1);
+
+		shoppingBasket.addBookToBasketAndQuantity(cleanCodeBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanCoderBook);
+		shoppingBasket.addBookToBasketAndQuantity(cleanArchitectureBook);
+		shoppingBasket.addBookToBasketAndQuantity(testDrivenDevelopmentbyExampleBook);
+
+		Double total = shoppingBasket.getSubtotal();
+
+		assertEquals(new Double(160.0), total);
+	}
 }
