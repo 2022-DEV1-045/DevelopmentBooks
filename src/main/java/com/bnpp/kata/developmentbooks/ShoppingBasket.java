@@ -7,7 +7,7 @@ public class ShoppingBasket {
 	private List<ShoppingBasketItem> basketItems;
 
 	public ShoppingBasket() {
-		basketItems = new ArrayList<>();
+		basketItems = new ArrayList<ShoppingBasketItem>();
 	}
 
 	public void addBookToBasketAndQuantity(Book book) {
