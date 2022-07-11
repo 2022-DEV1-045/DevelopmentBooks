@@ -7,7 +7,7 @@ import org.junit.Test;
 public class BookTest {
 	@Test
 	public void getPrice() {
-		Book book = new Book();
+		Book book = new Book(50.0, 1);
 
 		Double actualPrice = book.getPrice();
 
@@ -16,7 +16,7 @@ public class BookTest {
 
 	@Test
 	public void getQuantity() {
-		Book book = new Book();
+		Book book = new Book(50.0, 1);
 
 		int totalQunatity = book.getQuantity();
 
